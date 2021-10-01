@@ -1,0 +1,1 @@
+<?php $user="root";$db="treda";$pass="3157759459";$host="localhost:3306";?>

@@ -1,0 +1,27 @@
+$(document).on('ready',function(){
+
+    $('#btn-registrar').click(function(){
+
+        var url = "../../controller/mdl_producto/registro.php";                                            
+
+        $.ajax({
+
+         type: "POST",                 
+
+         url: url,                    
+
+         data: $("#formulario").serialize(),
+
+         success: function(data)            
+
+         {
+
+           $('#resp').html(data);           
+
+         }
+
+         });
+
+      });      
+
+      });
