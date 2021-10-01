@@ -1,6 +1,6 @@
 <?php
 
-include"config.php";
+include"../../config.php";
 $ruta="C:/xampp/htdocs/prueba/php";
 include $ruta."/db/conexion.php"; 
 
@@ -31,6 +31,27 @@ public function __construct(){
 
         return $res ;
 
+    }
+    public function Reg_Producto($nombre,$descripcion,$valor,$tienda,$imagen){
+        $sql = "INSERT INTO `producto` (`nombre`, `descripcion`, `valor`, `tienda`, `imagen`) VALUES ('$nombre', '$descripcion', '$valor', '$tienda', '$imagen');";
+
+        $res = mysqli_query($this->db, $sql);
+
+        if($res){
+            return true;
+        }else{
+            return false;
+        }  
+    }
+    public function Borrar($id){
+        $sql = "DELETE FROM producto WHERE sku='$id'";
+        $res = mysqli_query($this->db, $sql);
+        if($res){
+            return true; 
+        }
+        else{  
+            return false;    
+        }  
     }
 }
 
